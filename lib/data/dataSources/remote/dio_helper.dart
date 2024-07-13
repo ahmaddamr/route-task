@@ -9,7 +9,7 @@ class DioHelper {
           return status! <
               500; // Accept all responses with status code less than 500
         },
-        baseUrl: 'https://student.valuxapps.com/api/',
+        baseUrl: 'https://dummyjson.com/',
         receiveDataWhenStatusError: true,
       ),
     );
@@ -24,7 +24,7 @@ class DioHelper {
     dio!.options.headers = {
       // 'Authorization': token ?? "",
       // 'lang': lang,
-      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/json'
     };
 
     return await dio!.get(url, queryParameters: query);

@@ -1,8 +1,8 @@
 class ProductsModel {
   List<Products>? products;
-  int? total;
-  int? skip;
-  int? limit;
+  dynamic total;
+  dynamic skip;
+  dynamic limit;
 
   ProductsModel({this.products, this.total, this.skip, this.limit});
 
@@ -20,28 +20,28 @@ class ProductsModel {
 }
 
 class Products {
-  int? id;
-  String? title;
-  String? description;
-  String? category;
-  double? price;
-  double? discountPercentage;
-  double? rating;
-  int? stock;
+  dynamic id;
+  dynamic title;
+  dynamic description;
+  dynamic category;
+  dynamic price;
+  dynamic discountPercentage;
+  dynamic rating;
+  dynamic stock;
   List<String>? tags;
-  String? brand;
-  String? sku;
-  int? weight;
+  dynamic brand;
+  dynamic sku;
+  dynamic weight;
   Dimensions? dimensions;
-  String? warrantyInformation;
-  String? shippingInformation;
-  String? availabilityStatus;
+  dynamic warrantyInformation;
+  dynamic shippingInformation;
+  dynamic availabilityStatus;
   List<Reviews>? reviews;
-  String? returnPolicy;
-  int? minimumOrderQuantity;
+  dynamic returnPolicy;
+  dynamic minimumOrderQuantity;
   Meta? meta;
   List<String>? images;
-  String? thumbnail;
+  dynamic thumbnail;
 
   Products(
       {this.id,
@@ -101,9 +101,9 @@ class Products {
 }
 
 class Dimensions {
-  double? width;
-  double? height;
-  double? depth;
+ dynamic width;
+  dynamic height;
+  dynamic depth;
 
   Dimensions({this.width, this.height, this.depth});
 
@@ -123,11 +123,11 @@ class Dimensions {
 }
 
 class Reviews {
-  int? rating;
-  String? comment;
-  String? date;
-  String? reviewerName;
-  String? reviewerEmail;
+  dynamic rating;
+  dynamic comment;
+  dynamic date;
+  dynamic reviewerName;
+  dynamic reviewerEmail;
 
   Reviews(
       {this.rating,
@@ -146,10 +146,10 @@ class Reviews {
 }
 
 class Meta {
-  String? createdAt;
-  String? updatedAt;
-  String? barcode;
-  String? qrCode;
+  dynamic createdAt;
+  dynamic updatedAt;
+  dynamic barcode;
+  dynamic qrCode;
 
   Meta({this.createdAt, this.updatedAt, this.barcode, this.qrCode});
 

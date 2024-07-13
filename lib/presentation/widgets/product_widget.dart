@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:route_task/utils/utils_class.dart';
 
 class ProductWidget extends StatelessWidget {
-  const ProductWidget({super.key});
+  const ProductWidget(
+      {super.key,
+      required this.img,
+      required this.name,
+      required this.discription,
+      required this.price,
+      required this.oldprice,
+      required this.rate});
+  final String img;
+  final String name;
+  final String discription;
+  final String price;
+  final String oldprice;
+  final String rate;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +24,7 @@ class ProductWidget extends StatelessWidget {
       // padding: EdgeInsets.all(5.0),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: Colors.grey),
         boxShadow: [
           BoxShadow(
@@ -29,10 +42,11 @@ class ProductWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    topLeft: Radius.circular(10)),
+                  topRight: Radius.circular(10),
+                  topLeft: Radius.circular(10),
+                ),
                 child: Image.network(
-                  'https://th.bing.com/th/id/OIP.tXQaubbYRZfiOBVdmQLugAHaH3?w=183&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+                  img,
                   height: 115,
                   width: double.infinity,
                   fit: BoxFit.fill,
@@ -52,17 +66,18 @@ class ProductWidget extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 5.0),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Text(
-              'Nike Air Jordan',
+              name,
               style: Styles.itemTextStyle,
+              maxLines: 1,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Text(
-              'Nike shoes flexible for wo...',
+              discription,
               style: Styles.itemTextStyle,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -73,13 +88,13 @@ class ProductWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Row(
               children: [
-                const Text(
-                  'EGP 1,200',
+                Text(
+                  'EGP $oldprice',
                   style: Styles.itemTextStyle,
                 ),
                 const SizedBox(width: 10.0),
                 Text(
-                  '2000 EGP',
+                  '${(price)} EGP',
                   style: Styles.itemTextStyle.copyWith(
                       decoration: TextDecoration.lineThrough,
                       fontSize: 14,
@@ -88,26 +103,26 @@ class ProductWidget extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 5.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     Text(
-                      'Review (4.6)',
+                      'Review ($rate)',
                       style: Styles.itemTextStyle,
                     ),
-                    SizedBox(width: 1.0),
-                    Icon(
+                    const SizedBox(width: 1.0),
+                    const Icon(
                       Icons.star,
                       color: Colors.amber,
                       size: 20.0,
                     ),
                   ],
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(3.0),
                   child: CircleAvatar(
                     radius: 14.0,
@@ -115,7 +130,7 @@ class ProductWidget extends StatelessWidget {
                     child: Icon(
                       Icons.add,
                       color: Colors.white,
-                      size: 20.0,
+                      size: 22.0,
                     ),
                   ),
                 ),
