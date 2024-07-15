@@ -10,7 +10,7 @@ class ProductsModel {
     if (json['products'] != null) {
       products = <Products>[];
       json['products'].forEach((v) {
-        products!.add(new Products.fromJson(v));
+        products!.add( Products.fromJson(v));
       });
     }
     total = json['total'];
@@ -81,7 +81,7 @@ class Products {
     sku = json['sku'];
     weight = json['weight'];
     dimensions = json['dimensions'] != null
-        ? new Dimensions.fromJson(json['dimensions'])
+        ?  Dimensions.fromJson(json['dimensions'])
         : null;
     warrantyInformation = json['warrantyInformation'];
     shippingInformation = json['shippingInformation'];
@@ -89,12 +89,12 @@ class Products {
     if (json['reviews'] != null) {
       reviews = <Reviews>[];
       json['reviews'].forEach((v) {
-        reviews!.add(new Reviews.fromJson(v));
+        reviews!.add( Reviews.fromJson(v));
       });
     }
     returnPolicy = json['returnPolicy'];
     minimumOrderQuantity = json['minimumOrderQuantity'];
-    meta = json['meta'] != null ? new Meta.fromJson(json['meta']) : null;
+    meta = json['meta'] != null ?  Meta.fromJson(json['meta']) : null;
     images = json['images'].cast<String>();
     thumbnail = json['thumbnail'];
   }

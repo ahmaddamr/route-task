@@ -12,7 +12,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ProductsCubit, ProductsState>(
       listener: (context, state) {
-        // TODO: implement listener
       },
       builder: (context, state) {
         var model = context.read<ProductsCubit>().productsModel;
@@ -77,7 +76,7 @@ class HomeScreen extends StatelessWidget {
             ),
           );
         } else {
-          return const CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );
