@@ -46,7 +46,6 @@ class HomeScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: GridView.builder(
-                        
                         physics: const BouncingScrollPhysics(),
                         itemCount: model.products?.length,
                         gridDelegate:
@@ -56,7 +55,19 @@ class HomeScreen extends StatelessWidget {
                                 crossAxisSpacing: 15,
                                 childAspectRatio: 1 / 1.1),
                         itemBuilder: (context, index) {
-                          return  ProductWidget(img: model.products?[index].images?.first??"",name: model.products?[index].title??"",discription: model.products?[index].description??"",price: model.products?[index].price.toString()??'',oldprice: model.products?[index].discountPercentage.toString()??"",rate: model.products?[index].rating.toString()??"",);
+                          return ProductWidget(
+                            img: model.products?[index].images?.first ?? "",
+                            name: model.products?[index].title ?? "",
+                            discription:
+                                model.products?[index].description ?? "",
+                            price:
+                                model.products?[index].price.toString() ?? '',
+                            oldprice: model.products?[index].discountPercentage
+                                    .toString() ??
+                                "",
+                            rate:
+                                model.products?[index].rating.toString() ?? "",
+                          );
                         },
                       ),
                     ),
